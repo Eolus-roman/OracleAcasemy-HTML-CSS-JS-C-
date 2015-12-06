@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+	
+   <head>
+      <title>Тест</title>
+	  <link rel="stylesheet" href="Style.css">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   </head>
+   <body>
+		<header>
+			<p><a href="index.html"><img src="webLogo.png" height="100" alt="webLogo" class="picture" ></a></p>
+			<div class ="radius" id="navig">
+			<h1>Основы Web-технологий</h1>
+			<nav>
+				<ul class="navigation">
+					<li><a href="index.html">Главная</a></li> 
+					<li><a href="Web.html">Web-технологии</a> 
+						<ul>
+							<li><a href="html5.html">HTML5</a></li> 
+							<li><a href="CSS3.html">CSS3</a></li> 
+							<li><a href="JavaScript.html">JavaScript</a></li> 
+						</ul> 
+					</li> 
+					<li><a href="calculator.html">Калькулятор</a></li> 
+					<li><a href="test.html">Тест</a></li> 
+				</ul>
+			</nav>
+			</div>
+		</header>
+		<div class ="radius indent">
+		<form name="test">
+			Какой тег предназначен для создания ссылок:<br />
+			<input type="radio" name="link" value="a" />&lt;a&gt;<br />
+			<input type="radio" name="link" value="a/" />&lt;a /&gt;<br />
+			<input type="radio" name="link" value="ref" />&lt;ref&gt;<br />
+			<input type="radio" name="link" value="ref/" />&lt;ref /&gt;<br />
+			Какой тег предназначен для создания нумерованного списка:<br />
+			<input type="radio" name="list" value="li" />&lt;li&gt;<br />
+			<input type="radio" name="list" value="dl" />&lt;dl&gt;<br />
+			<input type="radio" name="list" value="ol" />&lt;ol&gt;<br />
+			<input type="radio" name="list" value="ul" />&lt;ul&gt;<br />
+			Какой тег предназначен для передачи служебной информации браузеру:<br />
+			<input type="radio" name="transfer" value="info" />&lt;info&gt;<br />
+			<input type="radio" name="transfer" value="info/" />&lt;info /&gt;<br />
+			<input type="radio" name="transfer" value="meta" />&lt;meta&gt;<br />
+			<input type="radio" name="transfer" value="meta/" />&lt;meta /&gt;<br />
+			Какие теги используются при создании таблицы:<br />
+			<input type="checkbox" name="table"  value="bod" />&lt;bodyt&gt;<br />
+			<input type="checkbox" name="table" value="td" />&lt;td&gt;<br />
+			<input type="checkbox" name="table" value="gr" />&lt;groupcol&gt;<br />
+			<input type="checkbox" name="table" value="col" />&lt;col /&gt;<br />
+			Какие атрибуты используются при создании форм:<br />
+			<input type="checkbox" name="formBox" value="aut" />autocomplete<br />
+			<input type="checkbox" name="formBox" value="act" />action<br />
+			<input type="checkbox" name="formBox" value="cha" />charset<br />
+			<input type="checkbox" name="formBox" value="val" />validate<br />
+			<input type="button" value="Результат" id="butResult" />
+		</form>
+		</div>
+		<footer>
+			<address>
+				<a href="mailto:eolus.roman@gmail.com">Пишите: eolus.roman@gmail.com</a><br />
+			</address>
+				&copy; Мошнин Д.В., 2015 год
+		</footer>
+		<script src="test.js"></script>
+	</body>
+</html>

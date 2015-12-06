@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+      <title>Кальклятор</title>
+	  <link rel="stylesheet" href="Style.css">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	   <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+   </head>
+   <body>
+		<header>
+			<p><a href="index.html"><img src="webLogo.png" height="100" alt="webLogo" class="picture" ></a></p>
+			<div class ="radius" id="navig">
+			<h1>Основы Web-технологий</h1>
+			<nav>
+				<ul class="navigation">
+					<li><a href="index.html">Главная</a></li> 
+					<li><a href="Web.html">Web-технологии</a> 
+						<ul>
+							<li><a href="html5.html">HTML5</a></li> 
+							<li><a href="CSS3.html">CSS3</a></li> 
+							<li><a href="JavaScript.html">JavaScript</a></li> 
+						</ul> 
+					</li> 
+					<li><a href="calculator.html">Калькулятор</a></li> 
+					<li><a href="test.html">Тест</a></li> 
+				</ul>
+			</nav>
+			</div>
+		</header>
+		<div class ="radius indent">
+		<form name="calculatorForm"> 
+			<table class="cul">
+				<tr>
+					<td colspan="5"><input type="text" maxlength="40" class="inputBox" name="display" 
+					id="dis" /></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="7" id="number"  /></td>
+					<td><input type="button" value="8" id="number"  /></td>
+					<td><input type="button" value="9" id="number"  /></td>
+					<td><input type="button" value="/" id="functional"  /></td>
+					<td><input type="button" value="C" id="clear"  /></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="4" id="number" /></td>
+					<td><input type="button" value="5" id="number" /></td>
+					<td><input type="button" value="6" id="number"  /></td>
+					<td><input type="button" value="*" id="functional"  /></td>
+					<td><input type="button" value="&plusmn;" id="plusmin"  /></td>
+				</tr>
+				<tr>
+					<td><input type="button" value="1" id="number"  /></td>
+					<td><input type="button" value="2" id="number"  /></td>
+					<td><input type="button" value="3" id="number"  /></td>
+					<td><input type="button" value="-" id="functional" /></td>
+					<td rowspan="2"><input class="equally" type="button" value="=" id="design" /></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" value="0" id="number"  /></td>
+					<td><input type="button" value="." id="dotID"  /></td>
+					<td><input type="button" value="+" id="functional"  /></td>
+				</tr>
+			</table>
+		</form>
+		</div>
+
+		<footer>
+			<address>
+				<a href="mailto:eolus.roman@gmail.com">Пишите: eolus.roman@gmail.com</a><br />
+			</address>
+				&copy; Мошнин Д.В., 2015 год
+			
+		</footer>
+		
+	</body>
+	<script src="calculator.js"></script>
+	
+</html>
