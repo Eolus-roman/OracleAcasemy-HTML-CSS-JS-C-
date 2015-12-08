@@ -1,85 +1,61 @@
-function checkTest() {
-	var d=document;
-	var balls = 0; //балл за вопрос
-	var correctAnswers = 0; //Кол-во правильных ответов
-	var totalQuestions = 5; //Всего вопросов
+var checkTest = function () {
+	
+//	var balls = 0; //балл за вопрос
 
+	var testBoxOne = 0;
+	var testBoxTwo = 0;
+	var testradio = 0;
+	var correctAnswers = 0;
+	var correctAnswersPercent = 0;
+	var s = $("input");
 	
-	var i = 0;
-		for(i; i<d.getElementsByName("link").length; i++){
-		if(d.getElementsByName("link")[i].checked) {    
-			if(i==0){
-				balls+=2; correctAnswers++;
-				} else {
-					correctAnswers = correctAnswers - 1; balls = balls-2;
-				}
-			}
+		s.each(function(i, elem){
+		if($("input:radio").eq(i).prop("checked") == true) {
+			if(i==0 || i==6 || i==11){
+				testradio = testradio + 1;                 
+			}                   
 		}
 		
-	var i=0;
-		for(i; i<d.getElementsByName("list").length; i++){
-		if(d.getElementsByName("list")[i].checked) {    
-			if(i==2){
-				balls+=2; correctAnswers++;
-				} else {
-					correctAnswers = correctAnswers - 1; balls = balls-2;
-				} //radio, Какой тег предназначен для создания нумерованного списка: <ol> 
+		if ($("input.table").eq(i).prop("checked") == true){
+			if(i==1 || i==3){
+				testBoxOne = testBoxOne+0.5;
+			}else {
+				testBoxOne = testBoxOne-0.5;
 			}
 		}
-		
-	var i = 0;
-		for(i; i<d.getElementsByName("transfer").length; i++){
-		if(d.getElementsByName("transfer")[i].checked) {    
-			if(i==3){
-				balls+=2; correctAnswers++;
-				}  else {
-					correctAnswers = correctAnswers - 1; balls = balls-2;
-				}    //radio, Какой тег предназначен для передачи служебной информации браузеру: <meta /> 
-			}
-		}
-		
-	var i = 0;
-	for(i=0; i<d.getElementsByName("table").length; i++){
-		if(d.getElementsByName("table")[i].checked) {
-			if(i==0) {
-				balls = balls -1; correctAnswers = correctAnswers - 0.5;
-			}
-			if(i==1) {
-				balls+=1; correctAnswers+=0.5;
-			}  
-			if(i==2) {
-				balls = balls -1; correctAnswers = correctAnswers - 0.5;
-			}
-			if(i==3) {
-				balls+=1; correctAnswers+=0.5;
-			}  
 			
-		}
-	  
-    }
-	
-	var i = 0;
-	for(i=0; i<d.getElementsByName("formBox").length; i++){
-		if(d.getElementsByName("formBox")[i].checked) {
+		if ($("input.formBox").eq(i).prop("checked") == true){
+			if(i==0 || i==1){
+				testBoxTwo = testBoxTwo+0.5;
+			}else {
+				testBoxTwo = testBoxTwo-0.5;
+			}
+		}		
 		
-			if(i==0) {
-				balls+=1; correctAnswers+=0.5;
-			}  
-			if(i==1) {
-				balls+=1; correctAnswers+=0.5;
-			} 
-			if(i==2) {
-				balls = balls -1; correctAnswers = correctAnswers - 0.5;
-			}
-			if(i==3) {
-				balls = balls -1; correctAnswers = correctAnswers - 0.5;
-			}
-	  
+	})
+	correctAnswers = testradio + Math.max(testBoxOne,0) + Math.max(testBoxTwo,0);
+	correctAnswersPercent = (correctAnswers / 5) * 100;
+	
+		
+		switch (true){
+			case correctAnswersPercent < 25:
+				alert("Aargh! You are not ready! Your mark: " + correctAnswers + " points, " + "this is: " + correctAnswersPercent + "% of the maximum");
+				break;
+			case correctAnswersPercent < 50:
+				alert("Aargh! Bad! Bad result!. Your mark: " + correctAnswers + " points, " + "this is: " + correctAnswersPercent + "% of the maximum");
+				break;
+			case correctAnswersPercent < 75:
+				alert("Aargh! Bad result!! Your mark: " + correctAnswers + " points, " + "this is: " + correctAnswersPercent + "% of the maximum");
+				break;
+			case correctAnswersPercent < 100:
+				alert("Aargh! Good result! Your mark: " + correctAnswers + " points, " + "this is: " + correctAnswersPercent + "% of the maximum");
+				break;
+			case correctAnswersPercent == 100:
+				alert("Aargh! Great, wonderful, incredibly good result! Your mark: " + correctAnswers + " points, " + "this is: " + correctAnswersPercent + "% which is the maximum number of correct answers!");
+				break;
+			 default:
+			 alert("Aargh! I don't know what are you want!");
 		}
 	}
-
 	
-	alert("Максимум за тест 10 баллов. Вы набрали: "+balls+ " баллов. Процент верных ответов составил: "+(correctAnswers / totalQuestions)*100 +"%."); 
-}
-var elem = document.getElementById("butResult");
-elem.onclick = checkTest;
+	$("#butResult").click(checkTest);

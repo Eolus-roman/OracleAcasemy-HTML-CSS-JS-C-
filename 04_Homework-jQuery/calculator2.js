@@ -3,69 +3,49 @@ var current = "0" // Дисплей, текущее значение
 var operation = 0 // операции, такие как деление, умножение и т.д.
 var MAXLENGTH = 30
 var podium = $("#dis"); //document.getElementById('dis');
-//podium.val()
-var p = 0;
+
 
 
 function addDigit(dig) {         //ADD A DIGIT TO DISPLAY (keep as 'current')
-	if (current.indexOf("!") == -1) {   //if not already an error
-		if ( (eval(current) == 0)&& (current.indexOf(".") == -1) ) { 
-			current = dig;
+	if (podium.val().indexOf("!") == -1) {   //if not already an error
+		if ( (eval(podium.val()) == 0)&& (podium.val().indexOf(".") == -1) ) { 
+			podium.val(dig);
 		} else { 
-			current = current + dig;
+			podium.val(podium.val()+dig)
 		}
 	} else { 
-		current = "Hint! Press 'C'";  //Help out, if error present.
+		podium.val("Hint! Press 'C'");  //Help out, if error present.
 	}
-	if (current.indexOf("e0") != -1) {
-		var epos = current.indexOf("e");
-		current = current.substring(0,epos+1) + current.substring(epos+2);
+	if (podium.val().indexOf("e0") != -1) {
+		var epos = podium.val().indexOf("e");
+		podium.val(podium.val().substring(0,epos+1) + podium.val().substring(epos+2));
     }
-	if (current.length > MAXLENGTH) { 
-		current = "Aargh! Too long"; //don't allow over MAXLENGTH digits before "." ???
+	if (podium.val().length > MAXLENGTH) { 
+		podium.val("Aargh! Too long") ; //don't allow over MAXLENGTH digits before "." ???
 	}
-	podium.val(current);
-
+			
+			
 }
-
-
+//podium.val()
 var dot = function () {                 //PUT IN "." if appropriate.
-	if ( current.length == 0) {     //no leading ".", use "0."
-		current = "0.";
+	if ( podium.val().length == 0) {     //no leading ".", use "0."
+		podium.val("0.");
     } else {
-		if (( current.indexOf(".") == -1)&&( current.indexOf("e") == -1)) { 
-		current = current + ".";
+		if (( podium.val().indexOf(".") == -1)&&( podium.val().indexOf("e") == -1)) { 
+		podium.val(podium.val() + ".") ;
 		} 
 	}
-    podium.val(current);
+
 }
 var plusMinus = function () {
-	if  (current.indexOf("e") != -1) { 
-		var epos = current.indexOf("e-");
-		if (epos != -1) {
-			current = current.substring(0,1+epos) + current.substring(2+epos); //clip out -ve exponent 
-        }	else {
-			epos = current.indexOf("e");
-			current = current.substring(0,1+epos) + "-" + current.substring(1+epos); //insert -ve exponent
-			}
-		} else { 
-			if (current.indexOf("-") == 0) {
-				current = current.substring(1);
-			} else { 
-			current = "-" + current;
-			}
-		if ((eval(current) == 0)&& (current.indexOf(".") == -1 )) {
-			current = "0"; 
-		}
-    }
-    podium.val(current);
+	podium.val(podium.val() * -1);
  }
 
 var clearAll = function () { //Clear ALL entries!
-	current = "0";
+	podium.val("0");
 	operation = 0;                //clear operation
 	memory = "0";                  //clear memory
-    podium.val(current);
+
 }
 function operate(op) {            //STORE OPERATION e.g. + * / etc.
 /*	if (operation != 0) { 
@@ -84,29 +64,29 @@ function operate(op) {            //STORE OPERATION e.g. + * / etc.
 		operation = 4; 
 		}
 	memory = podium.val();
-	current = "";
-	
-    podium.val(current);
+	//current = "";
+	podium.val("");
+    
 }
 
 function fixCurrent() {
-	current = podium.val();
-	current = "" + parseFloat(current);
-	if (current.indexOf("NaN") != -1) {
-		current = "Aargh! I don't understand";
+	
+	podium.val() = "" + parseFloat(podium.val());
+	if (podium.val().indexOf("NaN") != -1) {
+		podium.val("Aargh! I don't understand");
     }
-    podium.val(current);;
+    
 }
 
 var calculate = function () { //PERFORM CALCULATION (= button)
 	if (operation == 1) {
-		current = eval(memory) * eval(current); 
+		podium.val( eval(memory) * eval(podium.val())); 
 	}
 	if (operation == 2) { 
-		if (eval(current) != 0) { 
-			current = eval(memory) / eval(current);
+		if (eval(podium.val()) != 0) { 
+			podium.val( eval(memory) / eval(current));
 		} else  {
-			current = "Aargh! Divide by zero"; 
+			podium.val( "Aargh! Divide by zero"); 
 		}
     }
 	if (operation == 3) {
@@ -137,13 +117,13 @@ $("#dis").change(fixCurrent);
 
 
 $(function() {
-	$(".number").click(function() {
+	$("#number").click(function() {
 		addDigit($(this).val());
 	});
 });
 
 $(function() {
-	$(".functional").click(function() {
+	$("#functional").click(function() {
 		operate($(this).val());
 	});
 });
