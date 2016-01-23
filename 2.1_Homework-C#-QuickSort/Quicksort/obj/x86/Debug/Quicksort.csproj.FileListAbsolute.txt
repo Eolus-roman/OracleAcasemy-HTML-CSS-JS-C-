@@ -1,0 +1,6 @@
+F:\Courses Oracle Academy\!Homework\С#\Quicksort\Quicksort\Quicksort\bin\Debug\Quicksort.exe
+F:\Courses Oracle Academy\!Homework\С#\Quicksort\Quicksort\Quicksort\bin\Debug\Quicksort.pdb
+F:\Courses Oracle Academy\!Homework\С#\Quicksort\Quicksort\Quicksort\obj\x86\Debug\Quicksort.exe
+F:\Courses Oracle Academy\!Homework\С#\Quicksort\Quicksort\Quicksort\obj\x86\Debug\Quicksort.pdb
+F:\Courses Oracle Academy\!Homework\С#\1. Quicksort\Quicksort\obj\x86\Debug\Quicksort.exe
+F:\Courses Oracle Academy\!Homework\С#\1. Quicksort\Quicksort\obj\x86\Debug\Quicksort.pdb
