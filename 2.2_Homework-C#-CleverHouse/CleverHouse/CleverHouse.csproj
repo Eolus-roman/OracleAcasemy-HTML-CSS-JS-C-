@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3ACCB51E-03D4-4AD9-AFE5-A4E6ABC10A23}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CleverHouse</RootNamespace>
+    <AssemblyName>CleverHouse</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\Device.cs" />
+    <Compile Include="Classes\CreateNew.cs" />
+    <Compile Include="Enum\BattlePlace.cs" />
+    <Compile Include="Enum\CleanLvl.cs" />
+    <Compile Include="Delegate\ReportState.cs" />
+    <Compile Include="Interfeces\ICreate.cs" />
+    <Compile Include="Interfeces\IBattle.cs" />
+    <Compile Include="Interfeces\IGetDice.cs" />
+    <Compile Include="Interfeces\ICharge.cs" />
+    <Compile Include="Interfeces\ICleaning.cs" />
+    <Compile Include="Interfeces\ISpeed.cs" />
+    <Compile Include="Interfeces\IRest.cs" />
+    <Compile Include="Interfeces\IShiftRelief.cs" />
+    <Compile Include="Interfeces\IChooseBattlefield.cs" />
+    <Compile Include="Interfeces\ISetTemperature.cs" />
+    <Compile Include="MainPart\Hoover.cs" />
+    <Compile Include="Interfeces\IChannel.cs" />
+    <Compile Include="Interfeces\IFreezeMode.cs" />
+    <Compile Include="Interfeces\IOpenOrClose.cs" />
+    <Compile Include="Interfeces\IVolume.cs" />
+    <Compile Include="MainPart\Fridge.cs" />
+    <Compile Include="Interfeces\IStatus.cs" />
+    <Compile Include="Classes\Menu.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enum\TemperatureLvl.cs" />
+    <Compile Include="MainPart\Television.cs" />
+    <Compile Include="Enum\ReliefLvl.cs" />
+    <Compile Include="MainPart\StationaryBicycle.cs" />
+    <Compile Include="MainPart\Warhammer.cs" />
+    <Compile Include="Enum\WorldEvent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

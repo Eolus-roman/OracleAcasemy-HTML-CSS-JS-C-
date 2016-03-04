@@ -1,0 +1,6 @@
+E:\Courses Oracle Academy\!Homework\С#\CleverHouse\CleverHouse\CleverHouse\bin\Debug\CleverHouse.exe.config
+E:\Courses Oracle Academy\!Homework\С#\CleverHouse\CleverHouse\CleverHouse\obj\Debug\CleverHouse.csprojResolveAssemblyReference.cache
+E:\Courses Oracle Academy\!Homework\С#\CleverHouse\CleverHouse\CleverHouse\bin\Debug\CleverHouse.exe
+E:\Courses Oracle Academy\!Homework\С#\CleverHouse\CleverHouse\CleverHouse\bin\Debug\CleverHouse.pdb
+E:\Courses Oracle Academy\!Homework\С#\CleverHouse\CleverHouse\CleverHouse\obj\Debug\CleverHouse.exe
+E:\Courses Oracle Academy\!Homework\С#\CleverHouse\CleverHouse\CleverHouse\obj\Debug\CleverHouse.pdb

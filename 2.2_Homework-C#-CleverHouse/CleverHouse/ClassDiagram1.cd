@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Warhammer - это настольная ролева игра, призванная развлечь хозяев сего умного дома.">
+    <Position X="10.661" Y="1.615" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="CleverHouse.Program" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CleverHouse.Device">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAEAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Abstract\Device.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CleverHouse.Fridge">
+    <Position X="2.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAEAAIAAAAAAABAAACCQAQAAgCkQAA=</HashCode>
+      <FileName>MainPart\Fridge.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CleverHouse.Television">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ISAAAAAggAAIAIAFCICAIUAAAAAAAACAAQIQAAAAAgA=</HashCode>
+      <FileName>MainPart\Television.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CleverHouse.Hoover">
+    <Position X="6.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAIAIFAAAAAIAMBAIAAAAAAAAAFAAAAAAAAAAgAAA=</HashCode>
+      <FileName>MainPart\Hoover.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CleverHouse.Warhammer">
+    <Position X="10.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAUACAAIAACEAAFAAAAAAIAACEAAACAAAFgAAEAAAA=</HashCode>
+      <FileName>MainPart\Warhammer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CleverHouse.CreateNew" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAgAAAAAAABAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\CreateNew.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CleverHouse.Menu" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAECAEAACCAAQAAAAAAAA=</HashCode>
+      <FileName>Classes\Menu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CleverHouse.StationaryBicycle">
+    <Position X="8.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAYAACEAAAAAAAAQggAAQAAAABAQAAghAI=</HashCode>
+      <FileName>MainPart\StationaryBicycle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="CleverHouse.IStatus" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Interfeces\IStatus.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.IOpenOrClose" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAACAAAAAACAAAA=</HashCode>
+      <FileName>Interfeces\IOpenOrClose.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.IFreezeMode" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAABAAAAAQAAAAAAEAAA=</HashCode>
+      <FileName>Interfeces\IFreezeMode.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.IChannel" Collapsed="true">
+    <Position X="12.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASAAAAAAAAAIAAAAAACAAEAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Interfeces\IChannel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.IVolume" Collapsed="true">
+    <Position X="14.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAACAAAAAAAAAAAAACAAAIAAAAAAgA=</HashCode>
+      <FileName>Interfeces\IVolume.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.ICharge" Collapsed="true">
+    <Position X="12.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfeces\ICharge.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.ICleaning" Collapsed="true">
+    <Position X="14.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAABAAAAAAAIBAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfeces\ICleaning.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.ISpeed" Collapsed="true">
+    <Position X="12.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAAAAQAAAAAI=</HashCode>
+      <FileName>Interfeces\ISpeed.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.IRest" Collapsed="true">
+    <Position X="14.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Interfeces\IRest.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.IShiftRelief" Collapsed="true">
+    <Position X="15.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAYAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Interfeces\IShiftRelief.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.IGetDice" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Interfeces\IGetDice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.IChooseBattlefield" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAEAAAAAAAAAAAAAAAAACAAABgAAAAAAA=</HashCode>
+      <FileName>Interfeces\IChooseBattlefield.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.IBattle" Collapsed="true">
+    <Position X="12.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfeces\IBattle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.ICreate">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAgAAAAAAABAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfeces\ICreate.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.ISetTemperature">
+    <Position X="13.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Interfeces\ISetTemperature.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="CleverHouse.TemperatureLvl" Collapsed="true">
+    <Position X="16" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAJAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum\TemperatureLvl.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CleverHouse.CleanLvl" Collapsed="true">
+    <Position X="16" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAEAAAAAAACAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum\CleanLvl.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CleverHouse.ReliefLvl" Collapsed="true">
+    <Position X="17.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAggA=</HashCode>
+      <FileName>Enum\ReliefLvl.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CleverHouse.BattlePlace" Collapsed="true">
+    <Position X="16" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgCACAAAAAAgAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum\BattlePlace.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CleverHouse.WorldEvent" Collapsed="true">
+    <Position X="16" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAABAAAAAAAAAIAAAQAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Enum\WorldEvent.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
