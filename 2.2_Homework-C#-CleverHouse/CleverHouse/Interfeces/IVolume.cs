@@ -9,8 +9,8 @@ namespace CleverHouse
     {
         int CurrentVolume { get; set; }
         void SetVolume(int input);
-        void MaxVolume();
-        void MinVolume();
+        void PlusVolume();
+        void MinusVolume();
         void Mute();
     }
 }

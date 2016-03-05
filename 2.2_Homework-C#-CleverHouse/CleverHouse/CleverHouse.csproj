@@ -46,7 +46,7 @@
     <Compile Include="Enum\BattlePlace.cs" />
     <Compile Include="Enum\CleanLvl.cs" />
     <Compile Include="Delegate\ReportState.cs" />
-    <Compile Include="ILinkChennel.cs" />
+    <Compile Include="Interfeces\ILinkChennel.cs" />
     <Compile Include="Interfeces\ICreate.cs" />
     <Compile Include="Interfeces\IBattle.cs" />
     <Compile Include="Interfeces\IGetDice.cs" />

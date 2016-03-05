@@ -7,18 +7,16 @@ namespace CleverHouse
 {
     public class CreateNew : ICreate
     {
-        public Fridge NewFridge()
-        {
-            Fridge fr = new Fridge(false, false, 3);
-            return fr;
-        }
-
         public Television NewTV()
         {
             Television tv = new Television(false, 100);
             return tv;
         }
-
+        public Fridge NewFridge()
+        {
+            Fridge fr = new Fridge(false, false, 3);
+            return fr;
+        }
         public Hoover NewHoover()
         {
             Hoover h = new Hoover(false, false);

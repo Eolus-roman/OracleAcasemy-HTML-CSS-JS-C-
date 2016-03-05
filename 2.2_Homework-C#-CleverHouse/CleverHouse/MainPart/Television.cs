@@ -8,14 +8,17 @@ namespace CleverHouse
 {
     public class Television : Device, IChannel, IVolume, ILinkChennel
     {
-        private bool chanLink; // настроены каналы или нет
+        //private bool chanLink; // настроены каналы или нет
         private int maxChannel; // максимальное количество каналов
         private int currentVolume; // текущая громкость
         private int currentChannel; // текущий канал
         private int temp;
         private int number = 0;
-        private string namechannel; // название канала
+        private string nameChannel; // название канала
         private List<string> channels;
+        const int MinVoluve = 0;
+        const int MaxVolume = 100;
+
 
         public Television(bool status, int maxChannel)
             : base(status)
@@ -32,7 +35,7 @@ namespace CleverHouse
             }
             set
             {
-                if (value >= 0 && value <= MaxChannel)
+                if (value >= MinVoluve && value <= MaxVolume)
                 {
                     currentVolume = value;
                 }
@@ -47,23 +50,23 @@ namespace CleverHouse
             }
             set
             {
-                if (value <= MaxChannel && value > 0)
+                if (value <= MaxChannel && value >= 0)
                 {
                     currentChannel = value;
                 }
             }
         }
+        public string NameChannel { get; set; }
         public override void On()
         {
             if (Status == false)
             {
                 Status = true;
-                LinkChannel();
-                CurrentChannel = 1;
+                CurrentChannel = 0;
             }
         }
 
-        public void MaxVolume()
+        public void PlusVolume()
         {
             if (Status)
             {
@@ -74,7 +77,7 @@ namespace CleverHouse
             }
         }
 
-        public void MinVolume()
+        public void MinusVolume()
         {
             if (Status)
             {
@@ -135,14 +138,14 @@ namespace CleverHouse
                 СhangeTheСhannel();
             }
         }
-        public string LinkChannel()
+        public string LinkChannelList()
         {
             string str = "";
             if (Status)
             {
                 channels = new List<string>();
-                chanLink = true;
-                
+                //chanLink = true;
+
                 for (int i = 0; i < MaxChannel; i++)
                 {
                     str += "\n№" + number + ", Отклик канала - есть.";
@@ -185,15 +188,15 @@ namespace CleverHouse
                     if (number == 9)
                     {
                         channels.Add("Histiry");
-                    } 
+                    }
                     if (number == 10)
                     {
                         channels.Add("MyNetworkTV");
-                    } 
+                    }
                     if (number == 11)
                     {
                         channels.Add("Golf Channel");
-                    } 
+                    }
                     if (number == 12)
                     {
                         channels.Add("Food Network");
@@ -219,16 +222,16 @@ namespace CleverHouse
                         channels.Add("Fox");
                     }
                     number += 1;
-                    
+
                 }
-                
+
                 СhangeTheСhannel();
 
             }
             return str;
         }
 
-        public string ListChannel()
+        public string ChannelListToStr()
         {
 
             string str = "\nСписок каналов: ";
@@ -246,26 +249,26 @@ namespace CleverHouse
         protected void СhangeTheСhannel()
         {
 
-            if (chanLink)
+            if (channels.Count != 0)
             {
-                if (CurrentChannel <= channels.Count && CurrentChannel > 0)
+                if (CurrentChannel <= channels.Count && CurrentChannel >= 0)
                 {
-                    namechannel = channels[CurrentChannel - 1];
+                    NameChannel = channels[CurrentChannel];
                 }
                 else
                 {
-                    namechannel = "";
+                    NameChannel = "";
                 }
             }
             else
             {
-                namechannel = "";
+                NameChannel = "";
             }
         }
         public override string ToString()
         {
-            
-            return base.ToString() + "; громкость: " + CurrentVolume + "; текущий канал: " + CurrentChannel + ", \nИмя текущего канала: " + namechannel + ";\n";
+
+            return base.ToString() + "; громкость: " + CurrentVolume + "; текущий канал: " + CurrentChannel + ", \nИмя текущего канала: " + NameChannel + ";\n";
         }
     }
 }

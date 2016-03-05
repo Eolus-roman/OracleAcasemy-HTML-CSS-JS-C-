@@ -111,11 +111,11 @@ namespace CleverHouse
                     {
                         case "link_ch":
                             Console.Clear();
-                            Console.WriteLine(il.LinkChannel());
+                            Console.WriteLine(il.LinkChannelList());
                             Console.ReadKey();
                             break;
                         case "list_ch":
-                            Console.WriteLine(il.ListChannel());
+                            Console.WriteLine(il.ChannelListToStr());
                             Console.ReadKey();
                             break;
                     }
@@ -165,10 +165,10 @@ namespace CleverHouse
                             vl.Mute();
                             break;
                         case "plus_vol":
-                            vl.MaxVolume();
+                            vl.PlusVolume();
                             break;
                         case "minus_vol":
-                            vl.MinVolume();
+                            vl.MinusVolume();
                             break;
                         case "set_vol":
                             Console.WriteLine("Введите желаемый уровень громкости в диапазоне от 0 до 100: ");
@@ -415,10 +415,10 @@ namespace CleverHouse
             Console.WriteLine("\nDevice delete nameDevice");
             Console.WriteLine("Device on nameDevice");
             Console.WriteLine("Device off nameDevice");
-            Console.WriteLine("\nде Devise - начальное наименование девайса. (TV, FR и т.д.) ");
+            Console.WriteLine("\tгде Devise - начальное наименование девайса. (TV, FR и т.д.) ");
 
             Console.WriteLine("\n\tКоманды для телевизора:");
-
+            Console.WriteLine("TV link_ch NameDevice - получает список каналов.");
             Console.WriteLine("TV list_ch NameDevice - показывает список телеканалов.");
             Console.WriteLine("TV next_ch NameDevice - следующий канал.");
             Console.WriteLine("TV previous_ch NameDevice - предыдущий канал.");

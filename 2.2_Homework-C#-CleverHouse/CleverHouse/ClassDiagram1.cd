@@ -29,7 +29,7 @@
   <Class Name="CleverHouse.Television">
     <Position X="4.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ASAAAAAggAAIAIAFCIAAIUAAAAAAAACAAQIQAgABAoA=</HashCode>
+      <HashCode>ASAAAAAgiIAIUIAFCIAAAUAAAABAAACACQIQAAgBAIA=</HashCode>
       <FileName>MainPart\Television.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -68,7 +68,7 @@
   <Class Name="CleverHouse.StationaryBicycle">
     <Position X="8.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAYAACEAAAAAAAAQggAAQAAAABAQAAghAI=</HashCode>
+      <HashCode>AAQCAAAAAAAYAACEAAAAAAAAQggAAQAAAABAQAAghAI=</HashCode>
       <FileName>MainPart\StationaryBicycle.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -100,14 +100,14 @@
   <Interface Name="CleverHouse.IChannel" Collapsed="true">
     <Position X="12.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ASAAAAAAAAAIAAAAAACAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>ASAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Interfeces\IChannel.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CleverHouse.IVolume" Collapsed="true">
     <Position X="14.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAIAACAAAAAAAAAAAAACAAAIAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAACIAAAIAACAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
       <FileName>Interfeces\IVolume.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -128,7 +128,7 @@
   <Interface Name="CleverHouse.ISpeed" Collapsed="true">
     <Position X="12.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAAAAQAAAAAI=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAQAgAAAAAAAAAQAAAAAI=</HashCode>
       <FileName>Interfeces\ISpeed.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -184,8 +184,8 @@
   <Interface Name="CleverHouse.ILinkChennel" Collapsed="true">
     <Position X="16" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAgAAAAA=</HashCode>
-      <FileName>ILinkChennel.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfeces\ILinkChennel.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="CleverHouse.TemperatureLvl" Collapsed="true">
