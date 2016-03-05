@@ -77,7 +77,7 @@ namespace CleverHouse
                     Console.ReadKey();
                     continue;
                 }
-                if (commands[0].ToLower() == "delete" && !DevicesDictionary.ContainsKey(commands[2]))
+                if (commands[1].ToLower() == "delete" && !DevicesDictionary.ContainsKey(commands[2]))
                 {
                     Console.WriteLine("Устройство с таким именем не существует!");
                     Console.WriteLine("Нажмите любую клавишу для продолжения");
@@ -89,12 +89,12 @@ namespace CleverHouse
                     Help();
                     continue;
                 }
-                if (commands[0].ToLower() == "delete" && DevicesDictionary.ContainsKey(commands[2]))
+                if (commands[1].ToLower() == "delete" && DevicesDictionary.ContainsKey(commands[2]))
                 {
                     DevicesDictionary.Remove(commands[2]);
                     continue;
                 }
-                switch (commands[0].ToLower())
+                switch (commands[1].ToLower())
                 {
                     case "on":
                         DevicesDictionary[commands[2]].On();
@@ -107,7 +107,7 @@ namespace CleverHouse
                 if (DevicesDictionary[commands[2]] is IChannel)
                 {
                     IChannel ch = (IChannel)DevicesDictionary[commands[2]];
-                    switch (commands[0].ToLower())
+                    switch (commands[1].ToLower())
                     {
                         case "list_ch":
                             Console.WriteLine(ch.ListChannel());
@@ -145,7 +145,7 @@ namespace CleverHouse
                 if (DevicesDictionary[commands[2]] is IVolume)
                 {
                     IVolume vl = (IVolume)DevicesDictionary[commands[2]];
-                    switch (commands[0].ToLower())
+                    switch (commands[1].ToLower())
                     {
                         case "mute_vol":
                             vl.Mute();
@@ -393,9 +393,10 @@ namespace CleverHouse
             Console.WriteLine("SB add NameDevice - добавить велотренажер.");
             Console.WriteLine("WH add NameDevice - добавить настольную игру Warhammer.");
 
-            Console.WriteLine("\ndel _ nameDevice");
-            Console.WriteLine("on _ nameDevice");
-            Console.WriteLine("off _ nameDevice");
+            Console.WriteLine("\nDevice delete nameDevice");
+            Console.WriteLine("Device on nameDevice");
+            Console.WriteLine("Device off nameDevice");
+            Console.WriteLine("\nде Devise - начальное наименование девайса. (TV, FR и т.д.) ");
 
             Console.WriteLine("\n \tКоманды для телевизора:");
             Console.WriteLine("TV list_ch NameDevice - показывает список телеканалов.");
