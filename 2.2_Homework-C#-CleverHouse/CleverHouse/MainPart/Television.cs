@@ -13,7 +13,7 @@ namespace CleverHouse
         private int currentVolume; // текущая громкость
         private int currentChannel; // текущий канал
         private int temp;
-        private int number;
+        private int number = 0;
         private string namechannel; // название канала
         private List<string> channels;
 
@@ -58,6 +58,7 @@ namespace CleverHouse
             if (Status == false)
             {
                 Status = true;
+                LinkChannel();
                 CurrentChannel = 1;
             }
         }
@@ -134,17 +135,17 @@ namespace CleverHouse
                 СhangeTheСhannel();
             }
         }
-        public string LinkChannels()
+        public string LinkChannel()
         {
             string str = "";
             if (Status)
             {
                 channels = new List<string>();
                 chanLink = true;
-                int number = 0;
+                
                 for (int i = 0; i < MaxChannel; i++)
                 {
-                    str += "\n№" + i + ", Отклик " + number + " канала - есть.";
+                    str += "\n№" + number + ", Отклик канала - есть.";
                     if (number == 0)
                     {
                         channels.Add("NBC");
@@ -220,12 +221,13 @@ namespace CleverHouse
                     number += 1;
                     
                 }
-                str += "\nСвязь проверена. \nНажмите любую клавишу.";
+                
                 СhangeTheСhannel();
 
             }
             return str;
         }
+
         public string ListChannel()
         {
 
@@ -262,17 +264,8 @@ namespace CleverHouse
         }
         public override string ToString()
         {
-            string chanLink;
-            if (this.chanLink)
-            {
-                chanLink = "связь проверена";
-            }
-            else
-            {
-                chanLink = "требуется проверка связи";
-            }
-
-            return base.ToString() + "; громкость: " + CurrentVolume + "; текущий канал: " + CurrentChannel + ", \nИмя текущего канала: " + namechannel + "; связь со спутником: " + chanLink + ";\n";
+            
+            return base.ToString() + "; громкость: " + CurrentVolume + "; текущий канал: " + CurrentChannel + ", \nИмя текущего канала: " + namechannel + ";\n";
         }
     }
 }

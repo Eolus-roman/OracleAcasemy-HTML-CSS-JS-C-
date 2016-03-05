@@ -11,6 +11,7 @@ namespace CleverHouse
         void Unhurriedly(); //неторопливо
         void Boost(); //ускорение
         void Quick();
+        void ReportInfo(); // информация о режимах
 
     }
 }

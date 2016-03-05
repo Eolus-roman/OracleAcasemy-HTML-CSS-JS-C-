@@ -7,7 +7,7 @@ namespace CleverHouse
 {
     public interface ILinkChennel
     {
-        string LinkChannels();
+        string LinkChannel();
         string ListChannel();
     }
 }

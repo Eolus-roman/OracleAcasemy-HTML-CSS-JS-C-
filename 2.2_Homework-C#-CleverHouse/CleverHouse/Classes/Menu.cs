@@ -16,9 +16,9 @@ namespace CleverHouse
         public void Show()
         {
             CN = new CreateNew();
-
-            DevicesDictionary.Add("FR", CN.NewFridge());
+           
             DevicesDictionary.Add("TV", CN.NewTV());
+            DevicesDictionary.Add("FR", CN.NewFridge());
             DevicesDictionary.Add("HR", CN.NewHoover());
             DevicesDictionary.Add("SB", CN.NewBicycle());
             DevicesDictionary.Add("WH", CN.NewGame());
@@ -111,7 +111,7 @@ namespace CleverHouse
                     {
                         case "link_ch":
                             Console.Clear();
-                            Console.WriteLine(il.LinkChannels());
+                            Console.WriteLine(il.LinkChannel());
                             Console.ReadKey();
                             break;
                         case "list_ch":
@@ -137,7 +137,7 @@ namespace CleverHouse
                             Input = Console.ReadLine();
                             if (Int32.TryParse(Input, out temp))
                             {
-                                if (temp < 0 || temp > ch.MaxChannel)
+                                if (temp < 0 && temp > ch.MaxChannel)
                                 {
                                     Console.WriteLine("Eror! Такого канала не существует!");
                                     Console.ReadKey();
@@ -153,6 +153,7 @@ namespace CleverHouse
                                 Console.ReadKey();
                             }
                             break;
+                                                            
                     }
                 }
                 if (DevicesDictionary[commands[2]] is IVolume)
@@ -174,7 +175,7 @@ namespace CleverHouse
                             Input = Console.ReadLine();
                             if (Int32.TryParse(Input, out temp))
                             {
-                                if (0 >= temp && temp <= 100)
+                                if (temp >= 0 && 100 <= temp)
                                 {
                                     vl.SetVolume(temp);
                                 }
@@ -236,7 +237,7 @@ namespace CleverHouse
                             Input = Console.ReadLine();
                             if (Double.TryParse(Input, out t))
                             {
-                                if (t < -18 || t > 15)
+                                if (t > -18 && t <15)
                                 {
                                     Console.WriteLine("Eror! Недопустимое значение температуры.");
                                     Console.ReadKey();
@@ -343,6 +344,11 @@ namespace CleverHouse
                         case "quick":
                             b.Quick();
                             break;
+                        case "info":
+                            b.ReportInfo();
+                            Console.ReadKey();
+                            break;
+
                     }
                 }
                 if (DevicesDictionary[commands[2]] is IRest)
@@ -411,9 +417,8 @@ namespace CleverHouse
             Console.WriteLine("Device off nameDevice");
             Console.WriteLine("\nде Devise - начальное наименование девайса. (TV, FR и т.д.) ");
 
-            Console.WriteLine("\n \tКоманды для телевизора:");
-            
-            Console.WriteLine("TV link_ch NameDevice - проверяет связь со спутником.");
+            Console.WriteLine("\n\tКоманды для телевизора:");
+
             Console.WriteLine("TV list_ch NameDevice - показывает список телеканалов.");
             Console.WriteLine("TV next_ch NameDevice - следующий канал.");
             Console.WriteLine("TV previous_ch NameDevice - предыдущий канал.");
@@ -431,7 +436,8 @@ namespace CleverHouse
             Console.WriteLine("FR defrost NameDevice - установить режим разморозки.");
             Console.WriteLine("FR temp NameDevice - Установить желаемую температуру.");
 
-            Console.WriteLine("\n \tКоманды для пылесоса:");
+            Console.WriteLine("\n\tКоманды для пылесоса:");
+
             Console.WriteLine("HR daily NameDevice - установить режим ежедневной уборки.");
             Console.WriteLine("HR weekend NameDevice - установить режим еженедельной уборки.");
             Console.WriteLine("HR quick NameDevice - установить режим быстрой уборки.");
@@ -439,7 +445,9 @@ namespace CleverHouse
             Console.WriteLine("HR clean_dc NameDevice - очистить пылесборник.");
             Console.WriteLine("HR charging NameDevice - зарядить акамулятор.");
 
-            Console.WriteLine("\n \tКоманды для велотренажера:");
+            Console.WriteLine("\n\tКоманды для велотренажера:");
+
+            Console.WriteLine("SB info NameDevice - информация о установленном режиме.");
             Console.WriteLine("SB highway NameDevice - установить режим шоссе.");
             Console.WriteLine("SB hills NameDevice - установить режим холмистой местности.");
             Console.WriteLine("SB dirt_road NameDevice - установить режим грунтовой дороги.");
@@ -450,7 +458,7 @@ namespace CleverHouse
             Console.WriteLine("SB slow NameDevice - сбросить скорость.");
             Console.WriteLine("SB relax NameDevice - отдохнуть, восстановить пульс.");
 
-            Console.WriteLine("\n \tКоманды для настольной игры Warhammer:");
+            Console.WriteLine("\n\tКоманды для настольной игры Warhammer:");
             Console.WriteLine("WH space NameDevice - установить карту 'Бескрайний Космос'.");
             Console.WriteLine("WH riot NameDevice - установить карту 'Зерна Ереси'.");
             Console.WriteLine("WH planet NameDevice - установить карту 'Битва за планету'.");
@@ -458,7 +466,7 @@ namespace CleverHouse
             Console.WriteLine("WH chaos NameDevice - установить карту 'Прорыв Хаоса'.");
             Console.WriteLine("WH play NameDevice - играть в Warhammer.");
 
-            Console.WriteLine("\n \texit - выход.");
+            Console.WriteLine("\n\texit - выход.");
             Console.WriteLine("Нажмите любую клавишу для продолжения");
             Console.ReadLine();
         }
