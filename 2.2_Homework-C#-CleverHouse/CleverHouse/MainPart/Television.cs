@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace CleverHouse
 {
-    public class Television : Device, IChannel, IVolume
+    public class Television : Device, IChannel, IVolume, ILinkChennel
     {
+        private bool chanLink; // настроены каналы или нет
         private int maxChannel; // максимальное количество каналов
         private int currentVolume; // текущая громкость
         private int currentChannel; // текущий канал
         private int temp;
+        private int number;
         private string namechannel; // название канала
         private List<string> channels;
 
@@ -88,18 +90,7 @@ namespace CleverHouse
                 CurrentVolume = 0;
             }
         }
-        protected void СhangeTheСhannel()
-        {
 
-            if (CurrentChannel <= channels.Count && CurrentChannel > 0)
-            {
-                namechannel = channels[CurrentChannel - 1];
-            }
-            else
-            {
-                namechannel = "канал не выбран";
-            }
-        }
 
 
 
@@ -143,45 +134,145 @@ namespace CleverHouse
                 СhangeTheСhannel();
             }
         }
+        public string LinkChannels()
+        {
+            string str = "";
+            if (Status)
+            {
+                channels = new List<string>();
+                chanLink = true;
+                int number = 0;
+                for (int i = 0; i < MaxChannel; i++)
+                {
+                    str += "\n№" + i + ", Отклик " + number + " канала - есть.";
+                    if (number == 0)
+                    {
+                        channels.Add("NBC");
+                    }
+                    if (number == 1)
+                    {
+                        channels.Add("Eurosport");
+                    }
+                    if (number == 2)
+                    {
+                        channels.Add("Eurosport 2");
+                    }
+                    if (number == 3)
+                    {
+                        channels.Add("Euronews");
+                    }
+                    if (number == 4)
+                    {
+                        channels.Add("Discovery Channel");
+                    }
+                    if (number == 5)
+                    {
+                        channels.Add("Science");
+                    }
+                    if (number == 6)
+                    {
+                        channels.Add("Science");
+                    }
+                    if (number == 7)
+                    {
+                        channels.Add("Animal Planet");
+                    }
+                    if (number == 8)
+                    {
+                        channels.Add("National Geographic channel");
+                    }
+                    if (number == 9)
+                    {
+                        channels.Add("Histiry");
+                    } 
+                    if (number == 10)
+                    {
+                        channels.Add("MyNetworkTV");
+                    } 
+                    if (number == 11)
+                    {
+                        channels.Add("Golf Channel");
+                    } 
+                    if (number == 12)
+                    {
+                        channels.Add("Food Network");
+                    }
+                    if (number == 13)
+                    {
+                        channels.Add("Lifetime");
+                    }
+                    if (number == 14)
+                    {
+                        channels.Add("Comedy Central");
+                    }
+                    if (number == 15)
+                    {
+                        channels.Add("Disney Channe");
+                    }
+                    if (number == 16)
+                    {
+                        channels.Add("Cartoon Networ");
+                    }
+                    if (number == 17)
+                    {
+                        channels.Add("Fox");
+                    }
+                    number += 1;
+                    
+                }
+                str += "\nСвязь проверена. \nНажмите любую клавишу.";
+                СhangeTheСhannel();
+
+            }
+            return str;
+        }
         public string ListChannel()
         {
-            channels = new List<string>();
-            AddChannels();
+
             string str = "\nСписок каналов: ";
             if (Status)
             {
                 for (int i = 0; i < channels.Count; i++)
                 {
                     str += "\n№" + i + " - " + channels[i];
+
                 }
             }
             return str;
         }
-        public virtual void AddChannels()
-        {
-            channels.Add("NBC");
-            channels.Add("Eurosport");
-            channels.Add("Eurosport 2");
-            channels.Add("Euronews");
-            channels.Add("Discovery Channel");
-            channels.Add("Science");
-            channels.Add("Animal Planet");
-            channels.Add("National Geographic channel");
-            channels.Add("Histiry");
-            channels.Add("MyNetworkTV");
-            channels.Add("Golf Channel");
-            channels.Add("Food Network");
-            channels.Add("Lifetime");
-            channels.Add("Comedy Central");
-            channels.Add("Disney Channe");
-            channels.Add("Cartoon Networ");
-            channels.Add("Fox");
-        }
 
+        protected void СhangeTheСhannel()
+        {
+
+            if (chanLink)
+            {
+                if (CurrentChannel <= channels.Count && CurrentChannel > 0)
+                {
+                    namechannel = channels[CurrentChannel - 1];
+                }
+                else
+                {
+                    namechannel = "";
+                }
+            }
+            else
+            {
+                namechannel = "";
+            }
+        }
         public override string ToString()
         {
+            string chanLink;
+            if (this.chanLink)
+            {
+                chanLink = "связь проверена";
+            }
+            else
+            {
+                chanLink = "требуется проверка связи";
+            }
 
-            return base.ToString() + "; громкость: " + CurrentVolume + "; текущий канал: " + CurrentChannel + ", \nИмя текущего канала: " + namechannel + "\n";
+            return base.ToString() + "; громкость: " + CurrentVolume + "; текущий канал: " + CurrentChannel + ", \nИмя текущего канала: " + namechannel + "; связь со спутником: " + chanLink + ";\n";
         }
     }
 }

@@ -104,15 +104,28 @@ namespace CleverHouse
                         break;
                 }
                 //начало команд для телевизора
+                if (DevicesDictionary[commands[2]] is ILinkChennel)
+                {
+                    ILinkChennel il = (ILinkChennel)DevicesDictionary[commands[2]];
+                    switch (commands[1].ToLower())
+                    {
+                        case "link_ch":
+                            Console.Clear();
+                            Console.WriteLine(il.LinkChannels());
+                            Console.ReadKey();
+                            break;
+                        case "list_ch":
+                            Console.WriteLine(il.ListChannel());
+                            Console.ReadKey();
+                            break;
+                    }
+                }
                 if (DevicesDictionary[commands[2]] is IChannel)
                 {
                     IChannel ch = (IChannel)DevicesDictionary[commands[2]];
                     switch (commands[1].ToLower())
                     {
-                        case "list_ch":
-                            Console.WriteLine(ch.ListChannel());
-                            Console.ReadKey();
-                            break;
+ 
                         case "next_ch":
                             ch.NextChannel();
                             break;
@@ -399,6 +412,8 @@ namespace CleverHouse
             Console.WriteLine("\nде Devise - начальное наименование девайса. (TV, FR и т.д.) ");
 
             Console.WriteLine("\n \tКоманды для телевизора:");
+            
+            Console.WriteLine("TV link_ch NameDevice - проверяет связь со спутником.");
             Console.WriteLine("TV list_ch NameDevice - показывает список телеканалов.");
             Console.WriteLine("TV next_ch NameDevice - следующий канал.");
             Console.WriteLine("TV previous_ch NameDevice - предыдущий канал.");

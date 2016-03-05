@@ -29,7 +29,7 @@
   <Class Name="CleverHouse.Television">
     <Position X="4.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ISAAAAAggAAIAIAFCICAIUAAAAAAAACAAQIQAAAAAgA=</HashCode>
+      <HashCode>ASAAAAAggAAIAIAFCIAAIUAAAAAAAACAAQIQAgABAoA=</HashCode>
       <FileName>MainPart\Television.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -100,7 +100,7 @@
   <Interface Name="CleverHouse.IChannel" Collapsed="true">
     <Position X="12.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ASAAAAAAAAAIAAAAAACAAEAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <HashCode>ASAAAAAAAAAIAAAAAACAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Interfeces\IChannel.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -179,6 +179,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
       <FileName>Interfeces\ISetTemperature.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CleverHouse.ILinkChennel" Collapsed="true">
+    <Position X="16" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>ILinkChennel.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="CleverHouse.TemperatureLvl" Collapsed="true">
