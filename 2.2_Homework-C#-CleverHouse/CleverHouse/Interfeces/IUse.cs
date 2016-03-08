@@ -5,9 +5,8 @@ using System.Text;
 
 namespace CleverHouse
 {
-    public interface ICharge
+    public interface IUse
     {
-        void CleaningDC();
-        void Charging();
+        void Apply();
     }
 }

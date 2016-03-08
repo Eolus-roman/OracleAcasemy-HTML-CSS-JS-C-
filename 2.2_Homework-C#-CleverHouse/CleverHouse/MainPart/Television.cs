@@ -8,25 +8,21 @@ namespace CleverHouse
 {
     public class Television : Device, IChannel, IVolume, ILinkChennel
     {
-        //private bool chanLink; // настроены каналы или нет
-        private int maxChannel; // максимальное количество каналов
         private int currentVolume; // текущая громкость
         private int currentChannel; // текущий канал
         private int temp;
-        private int number = 0;
-        private string nameChannel; // название канала
+        
         private List<string> channels;
         const int MinVoluve = 0;
         const int MaxVolume = 100;
-
-
-        public Television(bool status, int maxChannel)
+        public Television(bool status, int maxChannel, int channelNumber)
             : base(status)
         {
             MaxChannel = maxChannel;
+            ChannelNumber = channelNumber;
         }
-
         public int MaxChannel { get; set; }
+        public int ChannelNumber { get; set; }
         public int CurrentVolume
         {
             get
@@ -148,80 +144,80 @@ namespace CleverHouse
 
                 for (int i = 0; i < MaxChannel; i++)
                 {
-                    str += "\n№" + number + ", Отклик канала - есть.";
-                    if (number == 0)
+                    str += "\n№" + ChannelNumber + ", Отклик канала - есть.";
+                    if (ChannelNumber == 0)
                     {
                         channels.Add("NBC");
                     }
-                    if (number == 1)
+                    if (ChannelNumber == 1)
                     {
                         channels.Add("Eurosport");
                     }
-                    if (number == 2)
+                    if (ChannelNumber == 2)
                     {
                         channels.Add("Eurosport 2");
                     }
-                    if (number == 3)
+                    if (ChannelNumber == 3)
                     {
                         channels.Add("Euronews");
                     }
-                    if (number == 4)
+                    if (ChannelNumber == 4)
                     {
                         channels.Add("Discovery Channel");
                     }
-                    if (number == 5)
+                    if (ChannelNumber == 5)
                     {
                         channels.Add("Science");
                     }
-                    if (number == 6)
+                    if (ChannelNumber == 6)
                     {
                         channels.Add("Science");
                     }
-                    if (number == 7)
+                    if (ChannelNumber == 7)
                     {
                         channels.Add("Animal Planet");
                     }
-                    if (number == 8)
+                    if (ChannelNumber == 8)
                     {
                         channels.Add("National Geographic channel");
                     }
-                    if (number == 9)
+                    if (ChannelNumber == 9)
                     {
                         channels.Add("Histiry");
                     }
-                    if (number == 10)
+                    if (ChannelNumber == 10)
                     {
                         channels.Add("MyNetworkTV");
                     }
-                    if (number == 11)
+                    if (ChannelNumber == 11)
                     {
                         channels.Add("Golf Channel");
                     }
-                    if (number == 12)
+                    if (ChannelNumber == 12)
                     {
                         channels.Add("Food Network");
                     }
-                    if (number == 13)
+                    if (ChannelNumber == 13)
                     {
                         channels.Add("Lifetime");
                     }
-                    if (number == 14)
+                    if (ChannelNumber == 14)
                     {
                         channels.Add("Comedy Central");
                     }
-                    if (number == 15)
+                    if (ChannelNumber == 15)
                     {
                         channels.Add("Disney Channe");
                     }
-                    if (number == 16)
+                    if (ChannelNumber == 16)
                     {
                         channels.Add("Cartoon Networ");
                     }
-                    if (number == 17)
+                    if (ChannelNumber == 17)
                     {
                         channels.Add("Fox");
                     }
-                    number += 1;
+                    ChannelNumber += 1;
 
                 }
 

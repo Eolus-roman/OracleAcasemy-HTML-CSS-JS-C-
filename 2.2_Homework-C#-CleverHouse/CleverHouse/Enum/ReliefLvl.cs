@@ -10,5 +10,6 @@ namespace CleverHouse
         HighwayMode, //шоссе
         HillsMode, //холмы
         DirtRoadMode, // грунтовая дорога
+        VelodromeMode, // велотрек
     }
 }

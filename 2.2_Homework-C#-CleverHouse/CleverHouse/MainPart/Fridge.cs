@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CleverHouse
 {
-    public class Fridge : Device, IOpenOrClose, IFreezeMode, ISetTemperature
+    public class Fridge : Device, IOpenOrClose, ILevelChange, ISetTemperature
     {
         private bool lamp; // состояние лампочки
         private bool beep; // // сигнал
@@ -32,9 +32,9 @@ namespace CleverHouse
             {
                 if (value >= -18 && value <= 15)
                 {
-                    if (value >= -18 && value < 0)
+                    if (value > 5 && value <= 15)
                     {
-                        freeze = TemperatureLvl.Freezing;
+                        freeze = TemperatureLvl.Defrost;
                         temperature = value;
                     }
                     if (value >= 0 && value <= 5)
@@ -42,23 +42,27 @@ namespace CleverHouse
                         freeze = TemperatureLvl.Default;
                         temperature = value;
                     }
-                    if (value > 5 && value <= 15)
+
+                    if (value > 10 && value < 0)
                     {
-                        freeze = TemperatureLvl.Defrost;
+                        freeze = TemperatureLvl.Freezing;
+                        temperature = value;
+                    }
+                    if (value >= -10 && value <= -18)
+                    {
+                        freeze = TemperatureLvl.SuperFreezing;
                         temperature = value;
                     }
                 }
             }
         }
-
-
         public void Open()
         {
             if (StatusOpen == false)
             {
                 StatusOpen = true;
                 lamp = true;
-                if (Temperature >= -18 && Temperature <= 5)
+                if (Temperature >= -18 && Temperature <= 15)
                 {
                     System.Threading.Thread.Sleep(1000);
                     for (int i = 0; Temperature < 6; i++)
@@ -79,7 +83,7 @@ namespace CleverHouse
                 StatusOpen = false;
                 lamp = false;
                 beep = false;
-                if (Temperature > 6)
+                if (Temperature > 3)
                 {
                     for (int i = 0; Temperature > temp; i++)
                     {
@@ -88,25 +92,7 @@ namespace CleverHouse
                 }
             }
         }
-        public void SetFreezing() // режим  заморозки 
-        {
-            if (Status)
-            {
-                freeze = TemperatureLvl.Freezing;
-                Temperature = -13;
-                temp = Temperature;
-            }
-        }
-        public void SetDefault() // режим  заморозки 
-        {
-            if (Status)
-            {
-                freeze = TemperatureLvl.Default;
-                Temperature = 3;
-                temp = Temperature;
-            }
-        }
-        public void SetDefrost() // режим  заморозки 
+        public void FirstLvl() // режим  заморозки 
         {
             if (Status)
             {
@@ -115,6 +101,35 @@ namespace CleverHouse
                 temp = Temperature;
             }
         }
+        public void SecondLvl() // режим  заморозки 
+        {
+            if (Status)
+            {
+                freeze = TemperatureLvl.Default;
+                Temperature = 3;
+                temp = Temperature;
+            }
+        }
+        public void ThirdLvl() // режим  заморозки 
+        {
+            if (Status)
+            {
+                freeze = TemperatureLvl.Freezing;
+                Temperature = -5;
+                temp = Temperature;
+            }
+        }
+        public void FourthLvl() // режим  заморозки 
+        {
+            if (Status)
+            {
+                freeze = TemperatureLvl.SuperFreezing;
+                Temperature = -13;
+                temp = Temperature;
+            }
+        }
+
+
         public void SetTemperature(double input) // установить температуру холодильника
         {
             if (Status)
@@ -123,7 +138,7 @@ namespace CleverHouse
                 temp = Temperature;
             }
         }
-        public override string ToString() 
+        public override string ToString()
         {
 
             string statusDoor;
@@ -178,6 +193,6 @@ namespace CleverHouse
             return base.ToString() + "; статус двери: " + statusDoor + "; \nРежим работы: " + mode + "; значение температуры: " + Temperature + "; \nСостояние лампочки: " + lamp + "; сигнал: " + beep + ";\n";
         }
     }
-    
+
 
 }

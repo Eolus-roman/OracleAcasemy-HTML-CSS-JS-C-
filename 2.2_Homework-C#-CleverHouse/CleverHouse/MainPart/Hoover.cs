@@ -7,137 +7,146 @@ using System.Timers;
 
 namespace CleverHouse
 {
-    public class Hoover : Device, ICharge, ICleaning     //пылесос
+    public class Hoover : Device, IResetSettings, IUse, ILevelChange     //пылесос
     {
         private CleanLvl cleaning;
-        private int accumulator = 100;
-        private int dustFullLevel = 0;
         private bool lamp;
         private bool beep;
         public bool StatusDustCollector { get; set; }
-        public Hoover(bool status, bool statusDustCollector)
+        public Hoover(bool status, int dustCollector, int accumulator)
             : base(status)
         {
-            StatusDustCollector = statusDustCollector;
+            DustCollector = dustCollector;
+            Accumulator = accumulator;
         }
-
-        public void CleaningDC() //очистка пылесборника
+        public int Accumulator { get; set; }
+        public int DustCollector { get; set; }
+        public void ResetFirstParameter() //очистка пылесборника
         {
             StatusDustCollector = false;
             lamp = false;
-            if (dustFullLevel != 0)
+            if (DustCollector != 0)
             {
                 System.Threading.Thread.Sleep(1000);
-                for (int i = 0; dustFullLevel < 1; i++)
+                for (int i = 0; DustCollector < 1; i++)
                 {
-                    dustFullLevel -= 1;
+                    DustCollector -= 1;
                 }
             }
         }
-        public void Charging() //зарядка акамулятор
+        public void ResetSecondParameter() //зарядка акамулятор
         {
             beep = false;
-            if (accumulator <= 100)
+            if (Accumulator <= 100)
             {
                 System.Threading.Thread.Sleep(2000);
-                for (int i = 0; accumulator == 100; i++)
+                for (int i = 0; Accumulator == 100; i++)
                 {
-                    accumulator += 1;
+                    Accumulator += 1;
                 }
             }
         }
-        public void DailyCleaning()
+        public void Apply()
         {
-            if (StatusDustCollector == true)
+            if (StatusDustCollector == true && cleaning == CleanLvl.DailyMode)
             {
-                cleaning = CleanLvl.DailyMode;
                 System.Threading.Thread.Sleep(2000);
-                for (int i = 0, j = 0; dustFullLevel <= 100 || accumulator <= 0; i++, j++)
+                for (int i = 0, j = 0; DustCollector <= 100 || Accumulator <= 0; i++, j++)
                 {
-                    dustFullLevel += 2;
-                    accumulator -= 1;
+                    DustCollector += 2;
+                    Accumulator -= 1;
                 }
-                if (dustFullLevel <= 100)
+                if (DustCollector <= 100)
                 {
                     StatusDustCollector = false;
                     lamp = true;
                 }
-                if (accumulator <= 0)
+                if (Accumulator <= 0)
                 {
                     beep = true;
                 }
             }
-        }
-        public void WeekendCleaning()
-        {
-            if (StatusDustCollector == true)
+
+            else if (StatusDustCollector == true && cleaning == CleanLvl.OutputMode)
             {
-                cleaning = CleanLvl.OutputMode;
+
                 System.Threading.Thread.Sleep(5000);
-                for (int i = 0, j = 0; dustFullLevel <= 100 || accumulator <= 0; i++, j++)
+                for (int i = 0, j = 0; DustCollector <= 100 || Accumulator <= 0; i++, j++)
                 {
-                    dustFullLevel += 5;
-                    accumulator -= 2;
+                    DustCollector += 5;
+                    Accumulator -= 2;
                 }
-                if (dustFullLevel <= 100)
+                if (DustCollector <= 100)
                 {
                     StatusDustCollector = false;
                     lamp = true;
                 }
-                if (accumulator <= 0)
+                if (Accumulator <= 0)
                 {
                     beep = true;
                 }
             }
-        }
-        public void QuickCleaning()
-        {
-            if (StatusDustCollector == true)
+
+            else if (StatusDustCollector == true && cleaning == CleanLvl.QuickCleanMode)
             {
-                cleaning = CleanLvl.QuickCleanMode;
+
                 System.Threading.Thread.Sleep(1000);
 
-                for (int i = 0, j = 0; dustFullLevel <= 100 || accumulator <= 0; i++, j++)
+                for (int i = 0, j = 0; DustCollector <= 100 || Accumulator <= 0; i++, j++)
                 {
-                    dustFullLevel += 1;
-                    accumulator -= 3;
+                    DustCollector += 1;
+                    Accumulator -= 3;
                 }
-                if (dustFullLevel <= 100)
+                if (DustCollector <= 100)
                 {
                     StatusDustCollector = false;
                     lamp = true;
                 }
-                if (accumulator <= 0)
+                if (Accumulator <= 0)
+                {
+                    beep = true;
+                }
+            }
+
+            else if (StatusDustCollector == true && cleaning == CleanLvl.TotalCleanMode)
+            {
+
+                System.Threading.Thread.Sleep(10000);
+                for (int i = 0, j = 0; DustCollector <= 100 || Accumulator <= 0; i++, j++)
+                {
+                    DustCollector += 10;
+                    Accumulator -= 5;
+                }
+                if (DustCollector <= 100)
+                {
+                    StatusDustCollector = false;
+                    lamp = true;
+                }
+                if (Accumulator <= 0)
                 {
                     beep = true;
                 }
             }
         }
-        public void BigCleaning()
+        public void FirstLvl() //QuickCleanMode
         {
-            if (StatusDustCollector == true)
-            {
-                cleaning = CleanLvl.TotalCleanMode;
-                System.Threading.Thread.Sleep(10000);
-                for (int i = 0, j = 0; dustFullLevel <= 100 || accumulator <= 0; i++, j++)
-                {
-                    dustFullLevel += 10;
-                    accumulator -= 5;
-                }
-                if (dustFullLevel <= 100)
-                {
-                    StatusDustCollector = false;
-                    lamp = true;
-                }
-                if (accumulator <= 0)
-                {
-                    beep = true;
-                }
-            }
+            cleaning = CleanLvl.QuickCleanMode;
+        }
+        public void SecondLvl() //DailyMode
+        {
+            cleaning = CleanLvl.DailyMode;
+        }
+        public void ThirdLvl() //OutputMode
+        {
+            cleaning = CleanLvl.OutputMode;
+        }
+        public void FourthLvl() //TotalCleanMode
+        {
+            cleaning = CleanLvl.TotalCleanMode;
         }
         public override string ToString()
         {
-            
+
             string statusDustCollector;
             if (StatusDustCollector)
             {
@@ -188,7 +197,7 @@ namespace CleverHouse
             {
                 beep = "молчит";
             }
-            return base.ToString() + "; статус пылесборника: " + statusDustCollector + "; \nРежим работы: " + mode + "; заполненность пылесборника: " + dustFullLevel + "%" + "; \nСостояние лампочки: " + lamp + "; сигнал: " + beep + "\nСостояние акамулятора: " + accumulator + "%" + "\n";
+            return base.ToString() + "; статус пылесборника: " + statusDustCollector + "; \nРежим работы: " + mode + "; заполненность пылесборника: " + DustCollector + "%" + "; \nСостояние лампочки: " + lamp + "; сигнал: " + beep + "\nСостояние акамулятора: " + Accumulator + "%" + "\n";
         }
     }
 }

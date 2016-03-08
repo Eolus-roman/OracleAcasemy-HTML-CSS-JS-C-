@@ -10,7 +10,8 @@ namespace CleverHouse
     {
         static void Main(string[] args)
         {
-            new Menu().Show();
+            CreateNew CN = new CreateNew();
+            new Menu().Show(CN);
         }
     }
 }

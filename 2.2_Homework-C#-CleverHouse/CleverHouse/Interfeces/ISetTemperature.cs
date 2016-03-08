@@ -7,6 +7,7 @@ namespace CleverHouse
 {
     public interface ISetTemperature
     {
+        double Temperature { get; set; }
         void SetTemperature(double input);
     }
 }

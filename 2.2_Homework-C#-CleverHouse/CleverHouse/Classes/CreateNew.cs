@@ -9,7 +9,7 @@ namespace CleverHouse
     {
         public Television NewTV()
         {
-            Television tv = new Television(false, 100);
+            Television tv = new Television(false, 100, 0);
             return tv;
         }
         public Fridge NewFridge()
@@ -19,19 +19,19 @@ namespace CleverHouse
         }
         public Hoover NewHoover()
         {
-            Hoover h = new Hoover(false, false);
+            Hoover h = new Hoover(false, 0, 100);
             return h;
         }
 
         public StationaryBicycle NewBicycle()
         {
-            StationaryBicycle sb = new StationaryBicycle(false);
+            StationaryBicycle sb = new StationaryBicycle(false, 60);
             return sb;
         }
 
         public Warhammer NewGame()
         {
-            Warhammer wh = new Warhammer(false, false);
+            Warhammer wh = new Warhammer(false, "Игрок, ты еще не сыграл ни одной битвы!");
             return wh;
         }
     }

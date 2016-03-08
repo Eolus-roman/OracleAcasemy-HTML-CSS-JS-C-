@@ -46,20 +46,15 @@
     <Compile Include="Enum\BattlePlace.cs" />
     <Compile Include="Enum\CleanLvl.cs" />
     <Compile Include="Delegate\ReportState.cs" />
+    <Compile Include="Interfeces\ILevelChange.cs" />
     <Compile Include="Interfeces\ILinkChennel.cs" />
     <Compile Include="Interfeces\ICreate.cs" />
-    <Compile Include="Interfeces\IBattle.cs" />
-    <Compile Include="Interfeces\IGetDice.cs" />
-    <Compile Include="Interfeces\ICharge.cs" />
-    <Compile Include="Interfeces\ICleaning.cs" />
+    <Compile Include="Interfeces\IUse.cs" />
+    <Compile Include="Interfeces\IResetSettings.cs" />
     <Compile Include="Interfeces\ISpeed.cs" />
-    <Compile Include="Interfeces\IRest.cs" />
-    <Compile Include="Interfeces\IShiftRelief.cs" />
-    <Compile Include="Interfeces\IChooseBattlefield.cs" />
     <Compile Include="Interfeces\ISetTemperature.cs" />
     <Compile Include="MainPart\Hoover.cs" />
     <Compile Include="Interfeces\IChannel.cs" />
-    <Compile Include="Interfeces\IFreezeMode.cs" />
     <Compile Include="Interfeces\IOpenOrClose.cs" />
     <Compile Include="Interfeces\IVolume.cs" />
     <Compile Include="MainPart\Fridge.cs" />
@@ -72,7 +67,6 @@
     <Compile Include="Enum\ReliefLvl.cs" />
     <Compile Include="MainPart\StationaryBicycle.cs" />
     <Compile Include="MainPart\Warhammer.cs" />
-    <Compile Include="Enum\WorldEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

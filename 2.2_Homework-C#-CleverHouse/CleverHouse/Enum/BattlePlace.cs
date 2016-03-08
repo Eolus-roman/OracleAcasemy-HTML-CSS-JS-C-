@@ -11,7 +11,7 @@ namespace CleverHouse
         Riot,//бунт emp vs chaos
         BattleForPlanet, // emp vs tau
         ChaosBreakthrough,// emp vs eldar vs chaos
-        BattleForWorldHive, // eldar vs orc
+
  
     }
 }
