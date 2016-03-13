@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
+
 
 namespace DatabaseStaff
 {
     [Serializable]
     public class Employee : Person
     {
+       
         public Employee() { }
         public Employee(string alias, string name, string surname, string department, string position)
         {

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+
 using System.Linq;
 using System.Text;
 
@@ -8,6 +10,7 @@ namespace DatabaseStaff
     [Serializable]
     public abstract class Person
     {
+      
         public Person() { }
         public Person(string alias, string name, string surname, string department)
         {

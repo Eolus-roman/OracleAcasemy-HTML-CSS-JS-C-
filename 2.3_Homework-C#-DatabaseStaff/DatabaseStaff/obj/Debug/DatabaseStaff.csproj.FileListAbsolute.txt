@@ -4,3 +4,15 @@ E:\Courses Oracle Academy\!Homework\2.2_Homework-C#-DatabaseStaff\DatabaseStaff\
 E:\Courses Oracle Academy\!Homework\2.2_Homework-C#-DatabaseStaff\DatabaseStaff\DatabaseStaff\bin\Debug\DatabaseStaff.pdb
 E:\Courses Oracle Academy\!Homework\2.2_Homework-C#-DatabaseStaff\DatabaseStaff\DatabaseStaff\obj\Debug\DatabaseStaff.exe
 E:\Courses Oracle Academy\!Homework\2.2_Homework-C#-DatabaseStaff\DatabaseStaff\DatabaseStaff\obj\Debug\DatabaseStaff.pdb
+E:\Courses Oracle Academy\!Homework\2.2_Homework-C#-DatabaseStaff\DatabaseStaff\bin\Debug\DatabaseStaff.exe.config
+E:\Courses Oracle Academy\!Homework\2.2_Homework-C#-DatabaseStaff\DatabaseStaff\obj\Debug\DatabaseStaff.exe
+E:\Courses Oracle Academy\!Homework\2.2_Homework-C#-DatabaseStaff\DatabaseStaff\obj\Debug\DatabaseStaff.pdb
+E:\Courses Oracle Academy\!Homework\2.2_Homework-C#-DatabaseStaff\DatabaseStaff\bin\Debug\DatabaseStaff.exe
+E:\Courses Oracle Academy\!Homework\2.2_Homework-C#-DatabaseStaff\DatabaseStaff\bin\Debug\DatabaseStaff.pdb
+E:\Courses Oracle Academy\!Homework\2.2_Homework-C#-DatabaseStaff\DatabaseStaff\obj\Debug\DatabaseStaff.csprojResolveAssemblyReference.cache
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\bin\Debug\DatabaseStaff.exe.config
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\obj\Debug\DatabaseStaff.exe
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\obj\Debug\DatabaseStaff.pdb
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\bin\Debug\DatabaseStaff.exe
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\bin\Debug\DatabaseStaff.pdb
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\obj\Debug\DatabaseStaff.csprojResolveAssemblyReference.cache
