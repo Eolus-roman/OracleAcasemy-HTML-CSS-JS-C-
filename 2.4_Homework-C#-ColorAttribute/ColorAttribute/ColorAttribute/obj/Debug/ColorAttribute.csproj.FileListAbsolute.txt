@@ -1,0 +1,6 @@
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-ColorAttribute\ColorAttribute\ColorAttribute\bin\Debug\ColorAttribute.exe.config
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-ColorAttribute\ColorAttribute\ColorAttribute\bin\Debug\ColorAttribute.exe
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-ColorAttribute\ColorAttribute\ColorAttribute\bin\Debug\ColorAttribute.pdb
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-ColorAttribute\ColorAttribute\ColorAttribute\obj\Debug\ColorAttribute.csprojResolveAssemblyReference.cache
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-ColorAttribute\ColorAttribute\ColorAttribute\obj\Debug\ColorAttribute.exe
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-ColorAttribute\ColorAttribute\ColorAttribute\obj\Debug\ColorAttribute.pdb
