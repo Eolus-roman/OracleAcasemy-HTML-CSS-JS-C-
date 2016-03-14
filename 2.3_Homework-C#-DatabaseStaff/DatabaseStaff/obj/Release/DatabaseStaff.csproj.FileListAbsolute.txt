@@ -1,0 +1,5 @@
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\bin\Release\DatabaseStaff.exe.config
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\bin\Release\DatabaseStaff.exe
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\bin\Release\DatabaseStaff.pdb
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\obj\Release\DatabaseStaff.exe
+E:\Courses Oracle Academy\!Homework\2.3_Homework-C#-DatabaseStaff\DatabaseStaff\obj\Release\DatabaseStaff.pdb

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Employee>
+    <Alias>Хорус</Alias>
+    <Name>Алексей</Name>
+    <Surname>Клементьев</Surname>
+    <Department>Продаж</Department>
+    <Position>Старший менеджер</Position>
+  </Employee>
+  <Employee>
+    <Alias>Дарт Сидиус</Alias>
+    <Name>Сергей</Name>
+    <Surname>Шукарёв</Surname>
+    <Department>Тех. поддержка</Department>
+    <Position>Системный администратор</Position>
+  </Employee>
+  <Employee>
+    <Alias>Мойша</Alias>
+    <Name>Ганс</Name>
+    <Surname>Гандерберг</Surname>
+    <Department>Хоз. отдел</Department>
+    <Position>Начальник отдела</Position>
+  </Employee>
+</ArrayOfEmployee>

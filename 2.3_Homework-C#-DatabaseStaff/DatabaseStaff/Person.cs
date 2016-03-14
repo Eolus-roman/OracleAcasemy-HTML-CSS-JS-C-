@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Xml.Serialization;
-
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DatabaseStaff
 {
@@ -14,10 +13,11 @@ namespace DatabaseStaff
         public Person() { }
         public Person(string alias, string name, string surname, string department)
         {
-            alias = Alias;
-            name = Name;
-            surname = Surname;
-            department = Department;
+            Alias = alias;
+            Name = name;
+            Surname = surname;
+            Department = department;
+            
 
         }
         public string Alias { get; set; }
